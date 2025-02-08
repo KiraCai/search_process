@@ -14,6 +14,7 @@ app.use((req, res, next) => {
 app.get('/fetch-data', async (req, res) => {
     try {
         // Запрос к внешнему API
+        const urlParis = "https://trouverunlogement.lescrous.fr/tools/37/search?bounds=1.4462445_49.241431_3.5592208_48.1201456";
         const response = await axios.get('https://trouverunlogement.lescrous.fr/tools/37/search?bounds=-3.7351880734267815_53.173102984428084_8.547526770323241_43.73933253035327');
         console.log('Данные успешно получены'); //, response.data
         res.json(response.data);
